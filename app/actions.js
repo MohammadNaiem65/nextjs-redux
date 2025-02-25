@@ -24,6 +24,8 @@ export async function createItem(formData) {
     }
 
     // Revalidate the path to update server components
+    // This function revalidates the cache for the '/' route,
+    // potentially causing it to be rebuilt with fresh data.
     revalidatePath('/');
 
     return { success: true };
